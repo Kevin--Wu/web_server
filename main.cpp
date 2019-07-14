@@ -6,7 +6,8 @@ using namespace std;
 int main()
 {
 	int nNetFd = socket(AF_INET, SOCK_STREAM, 0);
-	cout<<nNetFd<<endl;
+	
+	cout<<close(nNetFd);
 	
 	return 0;
 }
