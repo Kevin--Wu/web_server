@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1564233883 source:/home/kevinwu/work_project/web_server/web_client/main.cpp
+	<iostream>
+	<unistd.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+

@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1564233836 source:/home/kevinwu/work_project/web_server/web_server/main.cpp
+	<iostream>
+	<unistd.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"ClientReactor.h"
+
+1563977111 /home/kevinwu/work_project/web_server/web_server/include/ClientReactor.h
+
+1563977378 source:/home/kevinwu/work_project/web_server/web_server/src/ClientReactor.cpp
+	<iostream>
+	<pthread.h>
+	<sys/socket.h>
+	"ClientReactor.h"
+	"EventLoop.h"
+
+1563977103 /home/kevinwu/work_project/web_server/web_server/include/EventLoop.h
+
+1564061069 source:/home/kevinwu/work_project/web_server/web_server/src/EventLoop.cpp
+	<iostream>
+	<pthread.h>
+	<sys/socket.h>
+	"ClientReactor.h"
+	"EventLoop.h"
+
