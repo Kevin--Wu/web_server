@@ -37,10 +37,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/ClientReactor.h" />
 		<Unit filename="include/EventLoop.h" />
+		<Unit filename="include/common.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/ClientReactor.cpp" />
 		<Unit filename="src/EventLoop.cpp" />
 		<Extensions>
 			<code_completion />

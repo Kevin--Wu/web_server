@@ -1,39 +1,26 @@
-#include <iostream>
+#include "common.h"
 
-#include <unistd.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include "EventLoop.h"
 
-#include "ClientReactor.h"
+EventLoop *g_pLoop;
 
-using namespace std;
+void *ThreadFun(void *args)
+{
+    g_pLoop->Loop();
+    return NULL;
+}
 
 int main()
 {
-    int nConFd = socket(AF_INET, SOCK_STREAM, 0);
-    sockaddr_in stAddr;
-    stAddr.sin_family = AF_INET;
-    stAddr.sin_addr.s_addr = inet_addr("192.168.1.111");
-    stAddr.sin_port = htons(12300);
+    EventLoop loop;
+    g_pLoop = &loop;
 
-    int nRetSts = 0;
-    bind(nConFd, (sockaddr *)&stAddr, sizeof(stAddr));
-    nRetSts = listen(nConFd, 3);
-    if (nRetSts != 0)
-        return -1;
+//    pthread_t nTid;
+//    pthread_create(&nTid, NULL, &ThreadFun, NULL);
 
-    // Wait for connect
-    sockaddr_in stNewClientAddr;
-    socklen_t nNewAddrLen;
+    ThreadFun(NULL);
 
-    int nNewCon = 0;
-    while( (nNewCon = accept(nConFd, (sockaddr *)&stNewClientAddr, &nNewAddrLen)) != -1)
-    {
-
-        ClientReactor objClReactor(nNewCon);
-        objClReactor.BeginRoutine();
-    }
+    sleep(10);
 
     return 0;
 }
