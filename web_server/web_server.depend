@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1565613272 source:/home/kevinwu/work_project/web_server/web_server/main.cpp
+1565613386 source:/home/kevinwu/work_project/web_server/web_server/main.cpp
 	"common.h"
 	"EventLoop.h"
 
@@ -24,4 +24,11 @@
 	<pthread.h>
 	<assert.h>
 	<unistd.h>
+
+1565707948 source:/home/kevinwu/work_project/web_server/web_server/src/Channel.cpp
+	"Channel.h"
+
+1565876915 /home/kevinwu/work_project/web_server/web_server/include/Channel.h
+	"common.h"
+	"EventLoop.h"
 
