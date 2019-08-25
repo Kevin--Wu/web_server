@@ -39,10 +39,12 @@
 		</Compiler>
 		<Unit filename="include/Channel.h" />
 		<Unit filename="include/EventLoop.h" />
+		<Unit filename="include/Poller.h" />
 		<Unit filename="include/common.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Channel.cpp" />
 		<Unit filename="src/EventLoop.cpp" />
+		<Unit filename="src/Poller.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

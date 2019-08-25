@@ -1,13 +1,14 @@
 #include "common.h"
 
 #include "EventLoop.h"
+#include "Channel.h"
 
 EventLoop *g_pLoop;
 
-void *ThreadFun(void *args)
+void timeout()
 {
-    g_pLoop->Loop();
-    return NULL;
+    std::cout << "Time out" << std::endl;
+    g_pLoop->Quit();
 }
 
 int main()
@@ -15,12 +16,16 @@ int main()
     EventLoop loop;
     g_pLoop = &loop;
 
-//    pthread_t nTid;
-//    pthread_create(&nTid, NULL, &ThreadFun, NULL);
+    int nTimeFd = timerfd_create(CLOCK_MONOTONIC, TFD_NONBLOCK | TFD_CLOEXEC);
+    Channel ch(&loop, nTimeFd);
+    ch.SetReadCallback(timeout);
+    ch.EnableReading();
 
-    ThreadFun(NULL);
+    struct itimerspec HowLong;
+    HowLong.it_value.tv_sec = 5;
+    timerfd_settime(nTimeFd, 0, &HowLong, NULL);
 
-    sleep(10);
+    loop.Loop();
 
     return 0;
 }
