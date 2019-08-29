@@ -13,5 +13,7 @@
 #include <time.h>
 #include <sys/timerfd.h>
 
+typedef void (*TimerCallback)();
+
 
 #endif // COMMON_H_INCLUDED

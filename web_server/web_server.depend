@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1565613386 source:/home/kevinwu/work_project/web_server/web_server/main.cpp
+1566658425 source:/home/kevinwu/work_project/web_server/web_server/main.cpp
 	"common.h"
 	"EventLoop.h"
+	"Channel.h"
 
 1563977111 /home/kevinwu/work_project/web_server/web_server/include/ClientReactor.h
 
@@ -15,13 +16,13 @@
 1566652751 /home/kevinwu/work_project/web_server/web_server/include/EventLoop.h
 	"common.h"
 
-1566652724 source:/home/kevinwu/work_project/web_server/web_server/src/EventLoop.cpp
+1566727069 source:/home/kevinwu/work_project/web_server/web_server/src/EventLoop.cpp
 	"EventLoop.h"
 	"common.h"
 	"Poller.h"
 	"Channel.h"
 
-1566653216 /home/kevinwu/work_project/web_server/web_server/include/common.h
+1566735176 /home/kevinwu/work_project/web_server/web_server/include/common.h
 	<iostream>
 	<vector>
 	<map>
@@ -49,4 +50,14 @@
 
 1566396913 /home/kevinwu/work_project/web_server/web_server/include/Poller.h
 	"common.h"
+
+1566727498 source:/home/kevinwu/work_project/web_server/web_server/src/Timer.cpp
+	"Timer.h"
+
+1566727498 /home/kevinwu/work_project/web_server/web_server/include/Timer.h
+
+1566727477 source:/home/kevinwu/work_project/web_server/web_server/src/TimerId.cpp
+	"TimerId.h"
+
+1566727477 /home/kevinwu/work_project/web_server/web_server/include/TimerId.h
 

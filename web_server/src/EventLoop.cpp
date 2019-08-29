@@ -20,6 +20,8 @@ EventLoop::~EventLoop()
 {
     assert(!_m_bLooping);
     g_pLoopInThisThread = NULL;
+
+    delete _m_pPoller;
 }
 
 EventLoop* EventLoop::GetLoopInThisThread()
